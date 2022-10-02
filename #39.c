@@ -1,11 +1,13 @@
 #include <stdio.h>
 int main() {
- char c;
- printf("Enter a character: ");
- scanf("%c", &c);
- if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
- printf("%c is an alphabet.", c);
+ double num;
+ printf("Enter a number: ");
+ scanf("%lf", &num);
+ if (num < 0.0)
+ printf("You entered a negative number.");
+ else if (num > 0.0)
+ printf("You entered a positive number.");
  else
- printf("%c is not an alphabet.", c);
+ printf("You entered 0.");
  return 0;
 }

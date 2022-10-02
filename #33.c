@@ -1,17 +1,20 @@
+#include <ctype.h>
 #include <stdio.h>
 int main() {
- double n1, n2, n3;
-
- printf("Enter three different numbers: ");
- scanf("%lf %lf %lf", &n1, &n2, &n3);
- // if n1 is greater than both n2 and n3, n1 is the largest
- if (n1 >= n2 && n1 >= n3)
- printf("%.2f is the largest number.", n1);
- // if n2 is greater than both n1 and n3, n2 is the largest
- if (n2 >= n1 && n2 >= n3)
- printf("%.2f is the largest number.", n2);
- // if n3 is greater than both n1 and n2, n3 is the largest
- if (n3 >= n1 && n3 >= n2)
- printf("%.2f is the largest number.", n3);
+ char c;
+ int lowercase_vowel, uppercase_vowel;
+ printf("Enter an alphabet: ");
+ scanf("%c", &c);
+ // evaluates to 1 if variable c is a lowercase vowel
+ lowercase_vowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+ // evaluates to 1 if variable c is a uppercase vowel
+ uppercase_vowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+ // Show error message if c is not an alphabet
+ if (!isalpha(c))
+ printf("Error! Non-alphabetic character.");
+ else if (lowercase_vowel || uppercase_vowel)
+ printf("%c is a vowel.", c);
+ else
+ printf("%c is a consonant.", c);
  return 0;
 }

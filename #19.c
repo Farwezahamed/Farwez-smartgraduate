@@ -1,16 +1,14 @@
 #include <stdio.h>
 int main() {
- int number1, number2;
- printf("Enter two integers: ");
- scanf("%d %d", &number1, &number2);
- if(number1 == number2) {
- printf("Result: %d = %d",number1,number2);
- }
- else if (number1 > number2) {
- printf("Result: %d > %d", number1, number2);
+ int number;
+ printf("Enter an integer: ");
+ scanf("%d", &number);
+ // True if the remainder is 0
+ if (number%2 == 0) {
+ printf("%d is an even integer.",number);
  }
  else {
- printf("Result: %d < %d",number1, number2);
+ printf("%d is an odd integer.",number);
  }
-return 0;
+ return 0;
 }

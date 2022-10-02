@@ -1,21 +1,28 @@
 #include <stdio.h>
 int main() {
- const int maxInput = 100;
- int i;
- double number, average, sum = 0.0;
- for (i = 1; i <= maxInput; ++i) {
- printf("%d. Enter a number: ", i);
- scanf("%lf", &number);
-
- // go to jump if the user enters a negative number
- if (number < 0.0) {
- goto jump;
+ char operation;
+ double n1, n2;
+ printf("Enter an operator (+, -, *, /): ");
+ scanf("%c", &operation);
+ printf("Enter two operands: ");
+ scanf("%lf %lf",&n1, &n2);
+ switch(operation)
+ {
+ case '+':
+ printf("%.1lf + %.1lf = %.1lf",n1, n2, n1+n2);
+ break;
+ case '-':
+ printf("%.1lf - %.1lf = %.1lf",n1, n2, n1-n2);
+ break;
+ case '*':
+ printf("%.1lf * %.1lf = %.1lf",n1, n2, n1*n2);
+ break;
+ case '/':
+ printf("%.1lf / %.1lf = %.1lf",n1, n2, n1/n2);
+ break;
+ // operator doesn't match any case constant +, -, *, /
+ default:
+ printf("Error! operator is not correct");
  }
- sum += number;
- }
-jump:
- average = sum / (i - 1);
- printf("Sum = %.2f\n", sum);
- printf("Average = %.2f", average);
  return 0;
 }

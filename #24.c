@@ -1,10 +1,14 @@
 #include <stdio.h>
-int main() {
- int i = 1;
-
- while (i <= 5) {
- printf("%d\n", i);
- ++i;
+int main()
+{
+ int num, count, sum = 0;
+ printf("Enter a positive integer: ");
+ scanf("%d", &num);
+ // for loop terminates when num is less than count
+ for(count = 1; count <= num; ++count)
+ {
+ sum += count;
  }
+ printf("Sum = %d", sum);
  return 0;
 }
